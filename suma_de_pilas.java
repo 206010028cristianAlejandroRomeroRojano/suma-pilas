@@ -16,17 +16,21 @@ public class suma_de_pilas {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int tam, opt, tope = 0;
-        int[] p1 = new int[100];
-        int[] p2 = new int[100];
-        int[] psuma = new int[100];
+        System.out.println("singrese el numero de pila");
+        
+        int numero;
+        numero =0;
+        int[] p1 = new int[       tam=sc.nextInt()];
+        int[] p2 = new int[       tam=sc.nextInt()];
+        int[] psuma = new int[       tam=sc.nextInt()];
         do {
             System.out.println("\n 1-llenar pila A,B\n " + "2-mostrarA,B\n" + "3-vaciar pilas A,B\n" + "4-unir pila A,B\n" + "5-Mostrar pilas A,B\n" + "6-salir\n");
             switch (opt = sc.nextInt()) {
                 case 1:
-                    for (int i = 0; i <= 100; i++) {
-                        if (tope < 100) {
+                    for (int i = 0; i <= tam; i++) {
+                        if (tope < tam) {
                             p1[tope] = (int) (Math.random() * 100 + 1);
-                            p2[tope] = (int) (Math.random() * 100 + 1);
+                            p2[tope] = (int) (Math.random() * 200 + 100);
                             tope++;
                         } else {
                             System.out.println("pilas llena... ");
@@ -49,28 +53,28 @@ public class suma_de_pilas {
                     if (tope > 0) {
                         System.out.println("datos eliminado...");
                         for (int i = 0; i <= 100; i--) {
-                            tope--;
+                            numero--;
                         }
                     } else {
                         System.out.println("no hay datos para eliminar...");
                     }
                     break;
                 case 4:
-                    if (tope < 100) {
-                        for (int s = 0; s <= 100; s++) {
-                            psuma[tope] = p1[s] + p2[s];
-                            tope++;
+                    if (tope < tam) {
+                        for (int s = 0; s <= tam; s++) {
+                            psuma[s] = p1[s] + p2[s];
+                            s++;
                         }
                     } else {
                         System.out.println("pilas sumadas");
                     }
                     break;
                 case 5:
-                    if (100 >=tope) {
-                        for (int s = 0; s < 100; s++) {
+                    if (tope>0) {
+                        for (int s = tope -1; s >=0; s--) {
                             psuma[s] = p1[s] + p2[s];
-                            System.out.print(" " + psuma[s]);
-                            s++;
+                            System.out.println(" " + psuma[s]);
+                            
                         }
                     } else {
                         System.out.println("pilas vacia... ");
